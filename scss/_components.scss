@@ -1,76 +1,113 @@
 $Primary-200: #f1f1f1;
 $Primary-500: #919191;
-$Primary-700: #3B3B3B;
+$Primary-700: #3b3b3b;
+
+.l-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 120px 12px;
+}
 
 .l-card {
-    display: flex;
-    flex-wrap: wrap;
-    max-width: 1296px;
-    margin: 0 -24px;
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1296px;
+  margin: 0 -12px 4.5rem -12px;
 
-    &-item {
-        box-sizing: border-box;
-        width: 50%;
-        padding-left: 12px;
-        padding-right: 12px;
-        margin-bottom: 5rem;
-    }
+  &__item {
+    // width: calc(50% - 24px);
+    width: 50%;
+    padding: 0 12px;
+    margin-bottom: 5rem;
+  }
 }
 
+.c-card {
+  display: flex;
+  flex-direction: column;
 
-.card {
-    display: flex;
-    flex-direction: column;
+  &__kv {
+    height: 100%;
+    max-height: 400px;
+    border: 1px solid $Primary-200;
+    border-radius: 0.5rem;
+    overflow: hidden;
 
-    &_img{
-        height: 100%;
-        max-height: 400px;
-        border: 1px solid $Primary-200;
-        border-radius: 0.5rem;
-        overflow: hidden;
-        
-        img{
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
+  }
 
-    &_content {
-        padding: 1rem;
-        padding-bottom: 0;
-    }
+  &__content {
+    padding: 1rem;
+    padding-bottom: 0;
+  }
 
-    &_description {
-        color: $Primary-500;
-    }
+  &__description {
+    color: $Primary-500;
+    line-height: 1.5rem;
+  }
 
-    &_title {
-        margin-bottom: 0.5rem;
-        color: $Primary-700;
-        font-size: 1.75rem;
-        font-weight: 700;
-    }
+  &__title {
+    margin-bottom: 0.5rem;
+    color: $Primary-700;
+    font-size: 1.75rem;
+    font-weight: 700;
+  }
 }
-
 
 .l-chip {
-    width: 100%;
-    margin-top: 1.5rem;
-    display: flex;
-    align-items: center;
+  width: 100%;
+  margin-top: 1.5rem;
+  display: flex;
+  align-items: center;
 
-    &-item {
-        &+& {
-            margin-left: 0.5rem;
-        }
+  &__item {
+    & + & {
+      margin-left: 1rem;
     }
+  }
 }
 
-.chip {
-    padding: 4px 12px;
-    border-radius: 1rem;
-    background-color: $Primary-200;
-    font-weight: 400;
-    color: $Primary-700;
+.c-chip {
+  padding: 4px 12px;
+  border-radius: 1rem;
+  background-color: $Primary-200;
+  color: $Primary-700;
+  line-height: 1.5rem;
+  font-weight: 400;
+}
+
+.c-pagination {
+  display: flex;
+  justify-content: center;
+
+  &__item {
+    width: 2.5rem;
+    height: 2.5rem;
+    font-size: 1.5rem;
+    line-height: 2.25rem;
+    text-align: center;
+
+    &.is-active {
+      color: $Primary-200;
+      border-radius: 4px;
+      background-color: $Primary-700;
+
+      &:hover {
+        background-color: $Primary-700;
+      }
+    }
+
+    &:hover {
+      background-color: $Primary-200;
+    }
+
+    & + & {
+      margin-left: 1rem;
+    }
+  }
 }
